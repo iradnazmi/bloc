@@ -56,6 +56,21 @@ class Album extends Component {
     this.play();
   }
 
+  handleNextClick() {
+    const currentIndex = this.state.album.songs.findIndex(song => this.state.currentSong === song);
+    if (currentIndex+1 == this.state.album.songs.length) {
+      let newIndex = 0;
+      const newSong = this.state.album.songs[newIndex];
+      this.setSong(newSong);
+      this.play();
+    }
+    else {
+      let newIndex = Math.min(this.state.album.songs.length, currentIndex+1);
+      const newSong = this.state.album.songs[newIndex];
+      this.setSong(newSong);
+      this.play();
+    }
+  }
 
   handleMouseEnter(index) {
     this.setState({ isHovered: index+1});
