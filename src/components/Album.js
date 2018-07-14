@@ -11,11 +11,15 @@ class Album extends Component {
     this.state = {
       album: album,
       currentSong: album.songs[0],
-      isPlaying: false
+      isPlaying: false,
+      isHovered: false
     };
 
     this.audioElement = document.createElement('audio');
     this.audioElement.src = album.songs[0].audioSrc;
+
+    this.handleMouseEnter = this.handleMouseEnter.bind(this)
+    this.handleMouseLeave = this.handleMouseLeave.bind(this)
   }
 
   play() {
@@ -43,6 +47,14 @@ class Album extends Component {
     }
   }
 
+  handleMouseEnter(index) {
+    this.setState({ isHovered: index+1});
+  }
+
+  handleMouseLeave() {
+    this.setState({ isHovered: false});
+  }
+
   render() {
     return (
       <section className="album">
@@ -68,8 +80,22 @@ class Album extends Component {
             </tr>
             {
               this.state.album.songs.map((song, index) =>
-               <tr className="song" key={index} onClick={() => this.handleSongClick(song)} >
-                <td className="song-number">{index+1}</td>
+               <tr key={index} className="song"
+                onClick={() => this.handleSongClick(song)}
+                onMouseEnter={() => {this.handleMouseEnter(index)}}
+                onMouseLeave={() => {this.handleMouseLeave}}>
+                <td>
+                  <button id="playbtn" >
+                    { (this.state.currentSong.title === song.title) ?
+                      <span className={this.state.isPlaying && this.state.currentSong === song ? "ion-md-pause" : "ion-md-play"} ></span>
+                      :
+                      (this.state.isHovered === index+1) ?
+                      <span className="ion-md-play"></span>
+                      :
+                      <span className="song-number">{ index+1 }</span>
+                    }
+                  </button>
+                </td>
                 <td className="song-title">{ this.state.album.songs[index].title }</td>
                 <td className="song-duration">{ this.state.album.songs[index].duration }s</td>
                </tr>
