@@ -83,7 +83,7 @@ class Album extends Component {
                <tr key={index} className="song"
                 onClick={() => this.handleSongClick(song)}
                 onMouseEnter={() => {this.handleMouseEnter(index)}}
-                onMouseLeave={() => {this.handleMouseLeave}}>
+                onMouseLeave={() => {this.handleMouseLeave()}}>
                 <td>
                   <button id="playbtn" >
                     { (this.state.currentSong.title === song.title) ?
