@@ -1,0 +1,50 @@
+
+
+
+#l-album-cover {
+  margin: auto;
+  width: 200px;
+  height: auto;
+  display: block;
+}
+
+.clearfix {
+  display: flex;
+  min-height: 200px;
+  max-height: 2000px;
+  clear: both;
+  margin: 10px;
+}
+
+.l-album-title, .l-album-artist, .l-album-songs-length {
+  text-decoration: none;
+  margin: auto;
+  display: block;
+  color: white;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.l-album-title {
+  font-size: 22px;
+}
+
+.l-album-artist {
+  font-size: 12px;
+}
+
+.l-album-songs-length {
+  font-size: 10px;
+}
+
+.l-album {
+  border: 5px solid black;
+  margin: auto;
+  height: 260px;
+  width: 200px;
+  list-style-type: none;
+  padding: 0;
+}

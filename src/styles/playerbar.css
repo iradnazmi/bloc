@@ -1,0 +1,48 @@
+
+.player-bar {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  border: 2px solid black;
+  background: rgb(192,192,192,0.5);
+  padding: 10px;
+}
+
+.ion-md-skip-backward, .ion-md-skip-forward {
+  font-size: 15px;
+}
+
+.ion-md-play, .ion-md-pause {
+  font-size: 30px;
+}
+
+.ion-md-play {
+  margin-left: 5px;
+}
+
+#previous, #play-pause, #next {
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  outline: none;
+}
+
+#buttons, #time-control, #volume-control {
+  display: inline-block;
+}
+
+#buttons {
+  margin: auto;
+  vertical-align: middle;
+
+}
+
+#time-control {
+  float: left;
+  margin-left: 100px;
+}
+
+#volume-control {
+  float: right;
+  margin-right: 100px;
+}

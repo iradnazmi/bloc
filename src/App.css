@@ -1,5 +1,50 @@
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower|Josefin+Sans|Pacifico');
+
+
 .App {
   text-align: center;
+}
+
+#site-title {
+  float:left;
+  text-align: center;
+  display: inline-block;
+  color: white;
+  font-family: 'Great Vibes';
+  font-size: 400%;
+  width: 100%;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+#title-logo {
+  display: inline-block;
+  width: 100px;
+  height: 60px;
+  margin: 0px 0px 0px 10px;
+}
+
+#homepage {
+  font-family: "Josefin Sans", fantasy;
+  color: white;
+  width: 50%;
+  float: left;
+  margin-top: 5px;
+  text-decoration: none;
+  /border: 2px solid black;
+
+}
+
+#librarypage {
+  font-family: "Josefin Sans", fantasy;
+  color: white;
+  width: 50%;
+  float: right;
+  text-decoration: none;
+  /border: 2px solid black;
 }
 
 .App-logo {

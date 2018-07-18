@@ -11,10 +11,13 @@ class App extends Component {
       <div className="App">
         <header>
           <nav>
-            <Link to='/'> Landing </Link>
-            <Link to='/library'> Library </Link>
+            <Link id="homepage" to='/' alt="Homepage">  Bloc Jams  </Link>
+            <Link id="librarypage" to='/library' alt="My Music Library">  ♪My Library♪  </Link>
           </nav>
-          <h1>Bloc Jams</h1>
+          <h1 id="site-title">
+            Bloc Jams
+            <img id="title-logo" src="https://images.vexels.com/media/users/3/143528/isolated/preview/cc4fe6d36794d677dbd7090cb2c9a9b2-eighth-note-music-by-vexels.png" alt="musical note logo" />
+          </h1>
         </header>
         <main>
           <Route exact path="/" component={Landing} />

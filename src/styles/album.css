@@ -1,0 +1,105 @@
+
+
+#album-info {
+  clear: both;
+  width: 100%;
+}
+
+#album-cover-art, .album-details, .tablelist {
+  display: inline-block;
+}
+
+#album-cover-art {
+  width: 20%;
+  height: auto;
+  margin: 50px 100px;
+  vertical-align: middle;
+
+}
+
+.album-details {
+  vertical-align: middle;
+  width: 10%;
+  height: auto;
+  /margin-left: 100px;
+  /margin-right: 100px;
+  margin-bottom: 50px;
+  clear: both;
+}
+
+#album-title {
+  font-size: 40px;
+  text-align: center;
+  line-height: normal;
+  font-weight: bold;
+}
+
+.artist {
+  font-size: 20px;
+  text-align: center;
+  line-height: normal;
+  font-style: italic;
+}
+
+#release-info {
+  font-size: 12px;
+  text-align: center;
+  line-height: normal;
+}
+
+.tablelist {
+  width: 15%;
+  margin: 50px 100px;
+  vertical-align: middle;
+}
+
+#song-list {
+  background: #2670ad;
+  border: 10px groove purple;
+}
+
+#song-list, td {
+  width: 50%;
+  height: 20px;
+  border: 2px solid black;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+td {
+  padding: 10px;
+  text-align: center;
+  height: 20px;
+}
+
+tr:nth-child(even) {
+  background-color: #2989d8;
+}
+
+#btn {
+  width: auto;
+}
+
+#playbtn > .ion-ios-play, .ion-ios-pause {
+  color: black;
+}
+
+#playbtn {
+  font-size: 15px;
+  color: purple;
+  width: 100%;
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  outline: none;
+}
+
+.song-title {
+  overflow-x: auto;
+  width: 400px;
+}
+
+.song-duration {
+  width: auto;
+
+}
