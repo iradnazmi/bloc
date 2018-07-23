@@ -40,6 +40,11 @@ class PlayerBar extends Component {
             onChange={this.props.handleVolumeChange}
           />
         </section>
+        <section id="repeat-control">
+          <button id="repeat" onClick={this.props.repeatSong}>
+            <span className="ion-md-repeat"></span>
+          </button>
+        </section>
       </section>
     );
   }

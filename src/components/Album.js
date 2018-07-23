@@ -17,7 +17,9 @@ class Album extends Component {
       duration: album.songs[0].duration,
       volume: .5,
       isPlaying: false,
-      isHovered: false
+      isHovered: false,
+      repeat: false,
+      random: false
     };
 
     this.audioElement = document.createElement('audio');
@@ -62,6 +64,10 @@ class Album extends Component {
     this.setState({ currentSong: song });
   }
 
+  repeatSong() {
+    this.setState({ repeat: !this.state.repeat });
+  }
+
   handleSongClick(song) {
     const isSameSong = this.state.currentSong === song;
     if (this.state.isPlaying && isSameSong) {
@@ -82,17 +88,21 @@ class Album extends Component {
 
   handleNextClick() {
     const currentIndex = this.state.album.songs.findIndex(song => this.state.currentSong === song);
-    if (currentIndex+1 === this.state.album.songs.length) {
-      let newIndex = 0;
-      const newSong = this.state.album.songs[newIndex];
-      this.setSong(newSong);
-      this.play();
-    }
-    else {
-      let newIndex = Math.min(this.state.album.songs.length, currentIndex+1);
-      const newSong = this.state.album.songs[newIndex];
-      this.setSong(newSong);
-      this.play();
+    if (this.state.repeat) {
+      this.setSong(this.state.currentSong);
+    } else {
+      if (currentIndex+1 === this.state.album.songs.length) {
+        let newIndex = 0;
+        const newSong = this.state.album.songs[newIndex];
+        this.setSong(newSong);
+        this.play();
+      }
+      else {
+        let newIndex = Math.min(this.state.album.songs.length, currentIndex+1);
+        const newSong = this.state.album.songs[newIndex];
+        this.setSong(newSong);
+        this.play();
+      }
     }
   }
 
@@ -100,6 +110,12 @@ class Album extends Component {
     const newTime = this.audioElement.duration * e.target.value;
     this.audioElement.currentTime = newTime;
     this.setState({ currentTime: newTime });
+  }
+
+  handleDurationEnd() {
+    if (this.audioElement.currentTime === this.audioElement.duration) {
+        this.handleNextClick();
+    }
   }
 
   formatTime(time) {
@@ -196,6 +212,8 @@ class Album extends Component {
           handleNextClick={() => this.handleNextClick()}
           handleTimeChange={(e) => this.handleTimeChange(e)}
           handleVolumeChange={(e) => this.handleVolumeChange(e)}
+          repeatSong={() => this.repeatSong()}
+          handleDurationEnd={() => this.handleDurationEnd()}
           formatTime={(e) => this.formatTime(e)}
         />
       </section>

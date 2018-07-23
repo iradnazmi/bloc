@@ -5,7 +5,8 @@
   width: 100%;
   border: 2px solid black;
   background: rgb(192,192,192,0.5);
-  padding: 10px;
+  height: 100px;
+  /*padding: 10px;*/
 }
 
 .ion-md-skip-backward, .ion-md-skip-forward {
@@ -20,7 +21,7 @@
   margin-left: 5px;
 }
 
-#previous, #play-pause, #next {
+#previous, #play-pause, #next, #repeat {
   background-color: Transparent;
   background-repeat: no-repeat;
   border: none;
@@ -32,17 +33,33 @@
 }
 
 #buttons {
+  display: block;
+  clear: both;
   margin: auto;
   vertical-align: middle;
 
 }
 
 #time-control {
-  float: left;
-  margin-left: 100px;
+  display: block;
+  clear: both;
 }
 
 #volume-control {
+  display: block;
   float: right;
   margin-right: 100px;
+  width: 30%;
+}
+
+#repeat {
+  float: left;
+  display: block;
+  margin-left: 100px;
+  font-size: 20px;
+  width: 30%;
+}
+
+#repeat:active {
+  color: purple;
 }

@@ -41,10 +41,14 @@
 }
 
 .l-album {
-  border: 5px solid black;
+  border: 5px solid orange;
   margin: auto;
   height: 260px;
   width: 200px;
   list-style-type: none;
   padding: 0;
+}
+
+a {
+  text-decoration: none;
 }

@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css?family=Indie+Flower|Josefin+Sans|Pacifico');
 
 body {
-  background: radial-gradient(rgb(54,222,248), rgb(5,32,67));
+  background: radial-gradient(yellow,pink);
   background-attachment: fixed;
   height: 100%;
   background-repeat: no-repeat;
@@ -14,7 +14,7 @@ body {
   clear: both;
   font-family: 'Calibri', cursive;
   font-size: 20px;
-  color: #ced9ea;
+  color: pink;
   text-shadow:
     -1px -1px 0 #000,
     1px -1px 0 #000,
@@ -31,7 +31,7 @@ body {
 .point {
   overflow: hidden;
   color: black;
-  background: skyblue;
+  background: orange;
   padding: 20px;
   margin: 25px 300px;
   border: 5px solid black ;
